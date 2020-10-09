@@ -9,8 +9,8 @@ var max=20;
 var punktzahl=0;
 var schleifenanzahl = 5;
 
-//Aufgabe Multiplikation
-//Benutzerabfrage Multiplikation
+//Aufgabe Addition
+//Benutzerabfrage Addition
 function abfrageAdd () {
 
 	//Zufallszahlen
@@ -42,7 +42,6 @@ for (var i=1; i <=schleifenanzahl; i++) {
 
 //Aufgabe Subtraktion
 //Benutzerabfrage Subtraktion
-
 function abfrageSub () {
 
 	//Zufallszahlen
@@ -83,4 +82,40 @@ if (punktzahl >= 4) {
 		abfrageSub();
 	}
 }
+
+
+//Aufgabe Multiplikation
+//Benutzerabfrage Multiplikation
+function abfrageMul () {
+
+	//Zufallszahlen
+	zufallszahl1 = Math.floor(Math.random() * (max - min + 1)) + min;
+	zufallszahl2 = Math.floor(Math.random() * (max - min + 1)) + min;
+	
+	//Ergebnis der Multiplikation
+	ergebnis = zufallszahl1 * zufallszahl2;
+
+	var eingabe = prompt(`Wieviel ist ${zufallszahl1} * ${zufallszahl2}?`, "");
+
+	//Eingabe umwandeln in Zahlenvariable
+	var stringUmwandeln = parseInt(eingabe);
+
+	//Ausgabe + Punktzahl erhöhen 
+	if (stringUmwandeln === ergebnis) {
+		punktzahl++;
+		return alert(`Richtig (${punktzahl}/${schleifenanzahl*3})`);
+	} else {
+		punktzahl;
+		return alert(`Falsch (${punktzahl}/${schleifenanzahl*3})`);
+	}
+}
+
+if (punktzahl >= 8) {
+	alert("Willkommen, du bist nun in Level 3.");
+
+	for (var i=1; i <=schleifenanzahl; i++) {
+		abfrageMul();
+	}
+}
+
 
