@@ -11,7 +11,7 @@ var schleifenanzahl = 5;
 
 //Aufgabe Multiplikation
 //Benutzerabfrage Multiplikation
-function abfrage () {
+function abfrageAdd () {
 
 	//Zufallszahlen
 	zufallszahl1 = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -36,7 +36,7 @@ function abfrage () {
 }
 
 for (var i=1; i <=schleifenanzahl; i++) {
-	abfrage();
+	abfrageAdd();
 }
 
 
