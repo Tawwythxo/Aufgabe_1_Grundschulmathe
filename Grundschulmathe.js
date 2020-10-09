@@ -4,29 +4,37 @@ alert("Grundschulmathe");
 var ergebnis;
 var min=1;
 var max=20;
+var punktzahl=0;
+var schleifenanzahl = 5;
 
-//Zufallszahlen
-var zufallszahl1 = Math.floor(Math.random() * (max - min + 1)) + min;
-var zufallszahl2 = Math.floor(Math.random() * (max - min + 1)) + min;
-
-//Ergebnis der Addition
-ergebnis = zufallszahl1 + zufallszahl2;
 
 //Benutzerabfrage
 function abfrage () {
+
+	//Zufallszahlen
+	var zufallszahl1 = Math.floor(Math.random() * (max - min + 1)) + min;
+	var zufallszahl2 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+	//Ergebnis der Addition
+	ergebnis = zufallszahl1 + zufallszahl2;
 
 	var eingabe = prompt(`Wieviel ist ${zufallszahl1} + ${zufallszahl2}?`, "");
 
 	//Eingabe umwandeln in Zahlenvariable
 	var stringUmwandeln = parseInt(eingabe);
 
-	//Ausgabe
+	//Ausgabe + Punktzahl erhöhen 
 	if (stringUmwandeln === ergebnis) {
-		return alert("Richtig");
+		punktzahl++;
+		return alert(`Richtig (${punktzahl}/${schleifenanzahl})`);
 	} else {
-		return alert("Falsch");
+		punktzahl;
+		return alert(`Falsch (${punktzahl}/${schleifenanzahl})`);
 	}
 }
 
-abfrage();
+for (var i=1; i <=schleifenanzahl; i++) {
+	abfrage();
+}
+
 
