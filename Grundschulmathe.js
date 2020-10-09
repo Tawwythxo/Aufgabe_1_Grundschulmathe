@@ -9,6 +9,7 @@ var max=20;
 var punktzahl=0;
 var schleifenanzahl = 5;
 
+
 //Aufgabe Addition
 //Benutzerabfrage Addition
 function abfrageAdd () {
@@ -116,6 +117,61 @@ if (punktzahl >= 8) {
 	for (var i=1; i <=schleifenanzahl; i++) {
 		abfrageMul();
 	}
+}
+
+
+//Aufgabe Division
+//Benutzerabfrage Division
+function abfrageDiv () {
+
+	//Zufallszahlen
+	zufallszahl1 = Math.floor(Math.random() * (max - min + 1)) + min;
+	zufallszahl2 = Math.floor(Math.random() * (max - min + 1)) + min;
+	
+	//Auf rest überprüfen
+	var rest = zufallszahl1 % zufallszahl2;
+
+	//Wenn Rest vorhanden, nochmal generieren
+	if (rest !== 0)
+	{
+		while (rest !== 0) {
+			zufallszahl1 = Math.floor(Math.random() * (max - min + 1)) + min;
+			zufallszahl2 = Math.floor(Math.random() * (max - min + 1)) + min;
+			//Auf rest überprüfen
+			rest = zufallszahl1 % zufallszahl2;
+		}
+	}
+	
+	//Ergebnis der Division
+	ergebnis = zufallszahl1 / zufallszahl2;
+
+	var eingabe = prompt(`Wieviel ist ${zufallszahl1} / ${zufallszahl2}?`, "");
+
+	//Eingabe umwandeln in Zahlenvariable
+	var stringUmwandeln = parseInt(eingabe);
+
+	//Ausgabe + Punktzahl erhöhen 
+	if (stringUmwandeln === ergebnis) {
+		punktzahl++;
+		return alert(`Richtig (${punktzahl}/${schleifenanzahl*4})`);
+	} else {
+		punktzahl;
+		return alert(`Falsch (${punktzahl}/${schleifenanzahl*4})`);
+	}
+}
+
+if (punktzahl >= 12) {
+	alert("Willkommen, du bist nun in Level 4.");
+
+	for (var i=1; i <=schleifenanzahl; i++) {
+		abfrageDiv();
+	}
+}
+
+if(punktzahl >= 10) {
+	alert("Herzlichen Glückwunsch. Du bist nun ein Mathe-Genie.");
+} else {
+	alert("Hmmm, vielleicht solltest du bissle mehr üben. Nur ein kleiner Ratschlag.");
 }
 
 
