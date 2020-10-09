@@ -9,8 +9,8 @@ var max=20;
 var punktzahl=0;
 var schleifenanzahl = 5;
 
-
-//Aufgabe Addition
+//---------------------------------------------------
+//Funktionen:
 //Benutzerabfrage Addition
 function abfrageAdd () {
 
@@ -36,12 +36,6 @@ function abfrageAdd () {
 	}
 }
 
-for (var i=1; i <=schleifenanzahl; i++) {
-	abfrageAdd();
-}
-
-
-//Aufgabe Subtraktion
 //Benutzerabfrage Subtraktion
 function abfrageSub () {
 
@@ -76,16 +70,6 @@ function abfrageSub () {
 	}
 }
 
-if (punktzahl >= 4) {
-	alert("Willkommen, du bist nun in Level 2.");
-
-	for (var i=1; i <=schleifenanzahl; i++) {
-		abfrageSub();
-	}
-}
-
-
-//Aufgabe Multiplikation
 //Benutzerabfrage Multiplikation
 function abfrageMul () {
 
@@ -111,16 +95,6 @@ function abfrageMul () {
 	}
 }
 
-if (punktzahl >= 8) {
-	alert("Willkommen, du bist nun in Level 3.");
-
-	for (var i=1; i <=schleifenanzahl; i++) {
-		abfrageMul();
-	}
-}
-
-
-//Aufgabe Division
 //Benutzerabfrage Division
 function abfrageDiv () {
 
@@ -160,6 +134,33 @@ function abfrageDiv () {
 	}
 }
 
+
+//---------------------------------------------------
+//Aufrufen der Funktionen und Aufgaben
+//Aufgabe Addition
+for (var i=1; i <=schleifenanzahl; i++) {
+	abfrageAdd();
+}
+
+//Aufgabe Subtraktion
+if (punktzahl >= 4) {
+	alert("Willkommen, du bist nun in Level 2.");
+
+	for (var i=1; i <=schleifenanzahl; i++) {
+		abfrageSub();
+	}
+}
+
+//Aufgabe Multiplikation
+if (punktzahl >= 8) {
+	alert("Willkommen, du bist nun in Level 3.");
+
+	for (var i=1; i <=schleifenanzahl; i++) {
+		abfrageMul();
+	}
+}
+
+//Aufgabe Division
 if (punktzahl >= 12) {
 	alert("Willkommen, du bist nun in Level 4.");
 
@@ -168,6 +169,9 @@ if (punktzahl >= 12) {
 	}
 }
 
+
+//---------------------------------------------------
+//Abschlusstext
 if(punktzahl >= 10) {
 	alert("Herzlichen Glückwunsch. Du bist nun ein Mathe-Genie.");
 } else {
